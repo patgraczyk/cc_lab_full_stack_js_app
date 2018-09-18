@@ -13,7 +13,6 @@ SightingFormView.prototype.bindEvents = function () {
 SightingFormView.prototype.handleSubmit = function (evt) {
   evt.preventDefault();
   const newBird = this.createNewBird(evt.target);
-  console.log(newBird);
   PubSub.publish('SightingView:sighting-submitted', newBird);
   evt.target.reset();
 }
